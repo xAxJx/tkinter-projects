@@ -14,8 +14,6 @@ xsize = IntVar(value=50)
 ysize = IntVar(value=50)
 
 #image
-image_url = "https://uxwing.com/wp-content/themes/uxwing/download/emoji-emoticon/smiley-icon.png"
-
 image_object = Image.open('smiley-face.png') #create image object
 
 global image_smile
