@@ -1,9 +1,11 @@
+#testing displaying and dynamically changing fonts with tkinter & python
+
 from tkinter import *
 from tkinter import ttk
-from PIL import ImageTk, Image
 import random
 
 root = Tk()
+root.minsize(225,50)
 
 main = ttk.Frame(root, height = 200, width = 400)
 main.grid()
@@ -12,10 +14,10 @@ root.title('Fonts and Images')
 
 font_size = IntVar(value=12)
 font_color = StringVar(value="#000000")
-#print(font_color.get())
 
 image_label = ttk.Label(main, text='This is some text.', foreground=font_color.get(), font=("Arial", font_size.get()))
-image_label.grid(row = 0)
+image_label.grid(row = 0, columnspan = 3)
+
 
 def font_up():
     print("BIGGER!")
@@ -59,15 +61,12 @@ def font_colors():
     image_label.config(foreground=font_color.get())
 
 size_up = ttk.Button(main, text='Bigger', command=font_up)
-size_up.grid(row = 1, column = 0, sticky="e")
+size_up.grid(row = 1, column = 0, sticky="")
 size_down = ttk.Button(main, text='Smaller', command=font_down)
-size_down.grid(row = 1, column = 1, sticky="w")
+size_down.grid(row = 1, column = 1, sticky="")
 color_change = ttk.Button(main, text='Color', command=font_colors)
 color_change.grid(row=1, column = 2)
 
-#buttons to change font styles
 
-#image
-#button to manipulate images
 
 root.mainloop()
